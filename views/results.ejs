@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Weather App</title>
+        <link rel="Stylesheet" type="text/css" href="/weather_app/views/app.css">
+        <style>
+            div.center {
+            text-align: center;
+            color: red;
+            }
+
+            div.large {
+            font-size: 300%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="center large">
+             <% data["weather"].forEach(function(variable){%>
+             <li>Name:<%= data["name"]%></li>
+                <li>
+                    <strong> main:</strong> <%=variable["main"]%></strong>%>
+                </li>
+                <li>
+                     <strong> description : <%= variable["description"]%></strong>
+                </li>
+                <li> pressure:<%= data["main"].pressure%></li>
+                <li>temperature:<%= data["main"].temp-273 %></li>
+            <% })%>
+    <a href="/">Search Again</a>
+    </body>
+</html>
